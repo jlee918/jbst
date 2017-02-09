@@ -1,9 +1,8 @@
 extends layout
 
 block content
-    h1.
-        User List
-    ul
-        each user, i in userlist
-            li
-                a(href="mailto:#{user.email}")= user.username
+	head
+		h1(style = "text-align: center;", font size = "100").
+			#{title}
+	body
+

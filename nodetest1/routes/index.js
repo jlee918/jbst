@@ -6,7 +6,7 @@ var db = monk('mongodb://admin:bst@ds139949.mlab.com:39949/bst');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'JBST' });
 });
 
 /* GET Userlist page. */
