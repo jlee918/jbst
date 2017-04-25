@@ -9,39 +9,45 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'JBST' });
 });
 
-/* GET Userlist page. */
-router.get('/userlist', function(req, res) {
+/* GET Buy page. */
+router.get('/buy', function(req, res) {
     var db = req.db;
-    var collection = db.get('usercollection');
+    var collection = db.get('shoecollection');
     collection.find({},{},function(e,docs){
-        res.render('userlist', {
-            "userlist" : docs
+        res.render('buy', {
+            "shoelist" : docs
         });
     });
 });
 
-/* GET New User page. */
-router.get('/newuser', function(req, res) {
-    res.render('newuser', { title: 'Add New User' });
+/* GET Sell page. */
+router.get('/sell', function(req, res) {
+    res.render('sell', { title: 'What are you selling?' });
 });
 
 /* POST to Add User Service */
-router.post('/adduser', function(req, res) {
+router.post('/additem', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
 
     // Get our form values. These rely on the "name" attributes
-    var userName = req.body.username;
-    var userEmail = req.body.useremail;
+    var shoename = req.body.shoename;
+    var shoesize = req.body.shoesize;
+    var shoebrand = req.body.shoebrand;
+    var shoecondition = req.body.shoecondition;
+    var notes = req.body.notes;
 
     // Set our collection
-    var collection = db.get('usercollection');
+    var collection = db.get('shoecollection');
 
     // Submit to the DB
     collection.insert({
-        "username" : userName,
-        "email" : userEmail
+        "shoename" : shoename,
+        "shoesize" : shoesize,
+        "shoebrand" : shoebrand,
+        "shoecondition" : shoecondition,
+        "notes" : notes,
     }, function (err, doc) {
         if (err) {
             // If it failed, return error
@@ -49,7 +55,8 @@ router.post('/adduser', function(req, res) {
         }
         else {
             // And forward to success page
-            res.redirect("userlist");
+            res.redirect('/');
+
         }
     });
 });

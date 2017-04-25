@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h2(style = "text-align: center;", font size = "100").
+        All Shoes For Sale
+    ul
+        each shoe, i in shoelist
+            li
+                a(href="/")= shoe.shoename

@@ -1,0 +1,36 @@
+extends layout
+
+block content
+
+    h1(style = "text-align: center;", font size = "100").
+        #{title}
+    form#formAddItem(name="additem",method="post",action="/additem")
+        .row
+            div(align = "center")
+                select(name="shoebrand", id="shoebrand", required='')
+                    option(value="Nike") Nike
+                    option(value="Adidas") Adidas
+        br
+        .row
+            div(align = "center")
+                input(type='radio', name='shoecondition', value='Deadstock', checked='', required='')
+                |  Deadstock
+                br
+                input(type='radio', name='shoecondition', value='Used', required='')
+                |  Used
+        br
+        .row
+            div(align = "center")
+                input#inputShoeName(type="text", placeholder="Name of the Shoe", name="shoename", required='')
+        br
+        .row
+            div(align = "center")
+                input#inputSize(type="text", placeholder="Size in US", name="shoesize", required='')
+        br
+        .row
+            div(align = "center")
+                textarea(name="notes", placeholder="Notes",rows='4', cols='20')
+        br
+        .row
+            div(align = "center")
+                button#btnSubmit(type="submit") submit
