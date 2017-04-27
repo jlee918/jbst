@@ -1,24 +1,23 @@
 doctype html
 html
-	head
-		title JBST
-		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
-		link(rel='stylesheet', href='/stylesheets/main.css')
-	body
-		nav.navbar.navbar-default( role="navigation" )
-			.navbar-header
-			button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse", aria-expanded="false", aria-controls="navbar")
-				span.sr-only Toggle navigation
-				span.icon-bar
-				span.icon-bar
-				span.icon-bar
-			a.navbar-brand(href="/") JBST
+    head
+        title JBST
+        link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+        link(rel='stylesheet', href='/stylesheets/main.css')
+    body
+        nav.navbar.navbar-default( role="navigation" )
+            .navbar-header
+            button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse", aria-expanded="false", aria-controls="navbar")
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href="/") JBST
 
 
-			ul.nav.navbar-nav.navbar-right
-				li: a( href="/search") Search
-				li: a( href="/buy") Buy
-				li: a( href="/sell") Sell
-				li: a( href="/trade") Trade
-				li: a( href="/register") Register
-	block content
+            ul.nav.navbar-nav.navbar-right
+                li: a( href="/all") All For Sale
+                li: a( href="/wants") All Wants
+                li: a( href="/create") Create Post
+                li: a( href="/register") Register
+    block content

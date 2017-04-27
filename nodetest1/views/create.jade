@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	head
+		.jumbotron
+			h2(style = "text-align: center;", font size = "100").
+				#{title}
+	body
+		.row
+			.col-sm-6(style='border: 2px solid black; border-radius: 10px; width:400px; margin-left: 200px; height:100px')
+				a#asell( href="/sell") I am selling
+			.col-sm-6(style='border: 2px solid black; border-radius: 10px;margin-left:100px;width:400px; height:100px')
+				a#alf( href="/lookingfor") I am looking for

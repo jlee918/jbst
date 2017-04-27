@@ -1,0 +1,57 @@
+extends layout
+
+block content
+	.jumbotron
+		h1(style = "text-align: center;", font size = "100").
+			#{title}
+	form#formlfAddItem(name="addlfitem",method="post",action="/addlfitem")
+		.row
+			div(align = "center")
+				| Brand
+				br
+				select(name="shoebrand", id="shoebrand", required='')
+					option(value="Nike") Nike
+					option(value="Adidas") Adidas
+		br
+		.row
+			div(align = "center")
+				input(type='radio', name='shoecondition', value='Deadstock', checked='', required='')
+				|  Deadstock
+				br
+				input(type='radio', name='shoecondition', value='Used', required='')
+				|  Used
+				br
+				input(type='radio', name='shoecondition', value='Either', required='')
+				|  Deadstock or Used
+		br
+		.row
+			div(align = "center")
+				| Name of Shoe
+				br
+				input#inputShoeName(type="text", placeholder="e.g Ultra Boosts, Yeezys..", name="shoename", required='')
+		br
+		.row
+			div(align = "center")
+				| Size
+				br
+				input#inputSize(type="number", placeholder="Sizes in US", name="shoesize", min='1', required='')
+		br
+		.row
+			div(align = "center")
+				| Price Range
+				br
+				input(type='number', placeholder='Min' name='minimum', min='1')
+				|  -
+				pr
+				input(type='number', placeholder='Max' name='maximum', min='1')
+
+		br
+		.row
+			div(align = "center")
+				| Additional Notes
+				br
+				textarea(name="notes", placeholder="Anything extra you want to say...",rows='4', cols='20')
+		br
+		.row
+			div(align = "center")
+				button#btnSubmit(type="submit") submit
