@@ -1,12 +1,32 @@
 extends layout
 
 block content
-	h2(style = "text-align: center;", font size = "100").
-		#{title}
-	ul
-		.row#allrow
-			each want, i in wantlist
-				.col-md-3
-					.panel.panel-default
-						.panel-heading(style='font-size:150%; height:200px;')
-							a#wants(href="/")= want.shoename
+    h2(style = "text-align: center;", font size = "100").
+        #{title}
+    .row
+        input#myInput(type='text', onkeyup='myFunction()', placeholder='Search for shoes for sale...')
+    script.
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    ul#myUL
+        .row#allrow
+            each want, i in wantlist
+                .col-md-3
+                    li
+                        .panel.panel-default
+                            .panel-heading(style='font-size:150%; height:200px;')
+                                a#wants(href="/")= want.shoename
