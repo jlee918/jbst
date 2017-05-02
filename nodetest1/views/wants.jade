@@ -4,9 +4,9 @@ block content
 	h2(style = "text-align: center;", font size = "100").
 		#{title}
 	ul
-		each want, i in wantlist
-			.row
-				.col-md-4.col-sm-6.col-xs-12
+		.row#allrow
+			each want, i in wantlist
+				.col-md-3
 					.panel.panel-default
 						.panel-heading(style='font-size:150%; height:200px;')
-							a(href="/")= want.shoename
+							a#wants(href="/")= want.shoename

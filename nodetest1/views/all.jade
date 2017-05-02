@@ -4,11 +4,13 @@ block content
 	h2(style = "text-align: center;", font size = "100").
 		#{title}
 	ul
-		each shoe, i in shoelist
-			.row
-				.col-md-4.col-sm-6.col-xs-12
+		.row#allrow
+			each shoe, i in shoelist
+				.col-md-3
 					.panel.panel-default
 						.panel-heading(style='font-size:150%; height:200px;')
-							a(href="/")= shoe.shoename
+							a#all(href="/")= shoe.shoename
 							br
-							img(src=shoe.shoeimages[0], alt='Mountain View', style='width:304px;height:228px;')
+							img(src=shoe.shoeimages, alt='N/A', style='width:250px;height:150px;')
+
+

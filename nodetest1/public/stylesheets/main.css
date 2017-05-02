@@ -11,9 +11,25 @@
 	font-size: 40px;
 }
 
+#wants {
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
+#all {
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
 #alf {
 	color: black;
 	text-decoration: none;
 	margin-left: 40px;
 	font-size: 40px;
+}
+
+#allrow {
+	margin-right: 25px;
 }
