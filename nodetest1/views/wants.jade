@@ -4,7 +4,7 @@ block content
     h2(style = "text-align: center;", font size = "100").
         #{title}
     .row
-        input#myInput(type='text', onkeyup='myFunction()', placeholder='Search for shoes for sale...')
+        input#myInput(type='text', onkeyup='myFunction()', placeholder='Search for wanted shoes...')
     script.
         function myFunction() {
             var input, filter, ul, li, a, i;
@@ -28,5 +28,7 @@ block content
                 .col-md-3
                     li
                         .panel.panel-default
-                            .panel-heading(style='font-size:150%; height:200px;')
+                            .panel-heading#clr(style='font-size:150%; height:200px;')
                                 a#wants(href="/")= want.shoename
+                                br
+                                img(src="", alt='N/A', style='width:250px;height:150px;')

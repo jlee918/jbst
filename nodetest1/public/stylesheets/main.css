@@ -53,4 +53,13 @@
 #myUL {
     /* Remove default list styling */
     list-style-type: none;
+    float: left;
 }
+
+#clr {
+	content: "";
+    clear: both;
+    display: table;
+}
+
+
